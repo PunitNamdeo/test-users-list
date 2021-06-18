@@ -1,0 +1,38 @@
+.users {
+  display: flex;
+  flex-flow: column;
+}
+
+.control-panel {
+  margin-bottom: 2rem;
+  form {
+    display: flex;
+    flex-flow: row;
+    height: 1rem;
+    select {
+      margin-right: 1rem;
+      padding: 0.5rem;
+    }
+    input {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.users-list {
+  border-collapse: collapse;
+  width: 100%;
+  th {
+    background-color: #cccccc;
+  }
+  td, th {
+    padding: 1rem;
+    text-align: left;
+  }
+  tr {
+    border-bottom: 1px solid black;
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+}

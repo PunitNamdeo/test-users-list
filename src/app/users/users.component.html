@@ -1,0 +1,36 @@
+<div class="users">
+  <div class="control-panel">
+    <form>
+      <label class="select">Select column to filter:
+        <select>
+          <option *ngFor="let opt of options" [value]="opt.value">{{ opt.text }}</option>
+        </select>
+      </label>
+      <label class="input">Enter filter keywords:
+        <input type="text" placeholder="filter keywords go here..." />
+      </label>
+    </form>
+  </div>
+  <div class="users-list-wrapper">
+    <table class="users-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>User Name</th>
+          <th>E-mail</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>jdoe</td>
+          <td>john.doe@jd.com</td>
+          <td>024-648-3804</td>
+          <td>jd.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
