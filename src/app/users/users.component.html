@@ -1,13 +1,14 @@
 <div class="users">
   <div class="control-panel">
-    <form>
+    <form [formGroup]="userForm" (change)="applyFilter()">
       <label class="select">Select column to filter:
-        <select>
+        <select formControlName="option">
+          <option [ngValue]="null" disabled>Choose your column</option>
           <option *ngFor="let opt of options" [value]="opt.value">{{ opt.text }}</option>
         </select>
       </label>
       <label class="input">Enter filter keywords:
-        <input type="text" placeholder="filter keywords go here..." />
+        <input type="text" formControlName="searchText" placeholder="filter keywords go here..." />
       </label>
     </form>
   </div>
@@ -23,12 +24,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>John Doe</td>
-          <td>jdoe</td>
-          <td>john.doe@jd.com</td>
-          <td>024-648-3804</td>
-          <td>jd.com</td>
+        <tr *ngFor="let user of filteredUserList">
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.website}}</td>
         </tr>
       </tbody>
     </table>
